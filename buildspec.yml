@@ -10,10 +10,11 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn install
+      - mvn package
   post_build:
     commands:
       - echo Build completed on `date`
+      - mv target/stur-api-0.0.1-SNAPSHOT.war stur-api.war
 artifacts:
   files:
-    - target/stur-api-0.0.1-SNAPSHOT.jar
+    - stur-api.war
