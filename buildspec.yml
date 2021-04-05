@@ -14,8 +14,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - mv target/stur-api-0.0.1-SNAPSHOT.war ROOT.war
+      - mv target/stur-api-0.0.1-SNAPSHOT.jar stur-api.jar
 artifacts:
   files:
-    - ROOT.war
-    - .ebextensions/**/*
+    - stur-api.jar
