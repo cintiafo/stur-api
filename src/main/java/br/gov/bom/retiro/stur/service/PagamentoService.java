@@ -1,5 +1,6 @@
 package br.gov.bom.retiro.stur.service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,7 +17,7 @@ public class PagamentoService {
 
 	public List<PagamentoDTO> listarPorImovel(Long imovelId) {
 		return DataUtil.pagamentos.stream()
-						.filter(i -> i.getImovelId().equals(imovelId))
+						.filter(i -> i.getImovelId().equals(imovelId)).sorted(Comparator.reverseOrder())
 						.collect(Collectors.toList());
 	}
 	

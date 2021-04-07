@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class PagamentoDTO {
+public class PagamentoDTO implements Comparable<PagamentoDTO>{
 	
 	private Long id;
 	private BigDecimal valor;
@@ -15,5 +15,10 @@ public class PagamentoDTO {
 	private String ano;
 	private TipoPagamento tipo;
 	private Long imovelId;
+	
+	@Override
+	public int compareTo(PagamentoDTO o) {
+		return this.getId().compareTo(o.getId());
+	}
 
 }
